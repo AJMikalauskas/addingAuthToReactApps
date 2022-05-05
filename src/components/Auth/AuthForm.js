@@ -80,8 +80,8 @@ const AuthForm = () => {
         // This is necessary so that the data const below isn't shown even if an error occurs and so that the catch
         // statement can be hit. Since the code only shows up if error I could do === 400, but it doesn't
         // matter that much.
-        //console.log(data.code);
-        if (data.code !== 200 && data.code !== undefined) {
+        console.log(data.error.code);
+        if (data.error.code !== 200 && data.error.code !== undefined) {
           throw new Error(data.error.message);
         }
           // Would probably need this if handled by a .then promise as he does so.
